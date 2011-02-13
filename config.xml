@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec>0 7 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <si.nej.hudson.plugins.UnicornValidationBuilder>
+      <unicornUrl>http://validator.w3.org/unicorn/</unicornUrl>
+      <siteUrl>http://www.example.com</siteUrl>
+      <maxErrorsForStable>0</maxErrorsForStable>
+      <maxWarningsForStable>10</maxWarningsForStable>
+      <maxErrorsForUnstable>10</maxErrorsForUnstable>
+      <maxWarningsForUnstable>25</maxWarningsForUnstable>
+    </si.nej.hudson.plugins.UnicornValidationBuilder>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>unicorn_output.html</artifacts>
+      <latestOnly>false</latestOnly>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.plot.PlotPublisher>
+      <plots>
+        <hudson.plugins.plot.Plot>
+          <title>Unicorn HTML W3C Validation</title>
+          <yaxis></yaxis>
+          <series>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>markup-validator_errors.properties</file>
+              <label>Errors</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>markup-validator_warnings.properties</file>
+              <label>Warnings</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+          </series>
+          <group>Unicorn</group>
+          <numBuilds></numBuilds>
+          <csvFileName>1074396584.csv</csvFileName>
+          <csvLastModification>0</csvLastModification>
+          <style>stackedArea</style>
+          <useDescr>false</useDescr>
+        </hudson.plugins.plot.Plot>
+        <hudson.plugins.plot.Plot>
+          <title>Unicorn CSS W3C Validation</title>
+          <yaxis></yaxis>
+          <series>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>css21-validator_errors.properties</file>
+              <label>Errors</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>css21-validator_errors.properties</file>
+              <label>Warnings</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+          </series>
+          <group>Unicorn</group>
+          <numBuilds></numBuilds>
+          <csvFileName>1682403967.csv</csvFileName>
+          <csvLastModification>0</csvLastModification>
+          <style>stackedArea</style>
+          <useDescr>false</useDescr>
+        </hudson.plugins.plot.Plot>
+        <hudson.plugins.plot.Plot>
+          <title>Unicorn feed W3C Validation</title>
+          <yaxis></yaxis>
+          <series>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>feed_errors.properties</file>
+              <label>Errors</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+            <hudson.plugins.plot.PropertiesSeries>
+              <file>feed_warnings.properties</file>
+              <label>Warnings</label>
+              <fileType>properties</fileType>
+            </hudson.plugins.plot.PropertiesSeries>
+          </series>
+          <group>Unicorn</group>
+          <numBuilds></numBuilds>
+          <csvFileName>1371020191.csv</csvFileName>
+          <csvLastModification>0</csvLastModification>
+          <style>stackedArea</style>
+          <useDescr>false</useDescr>
+        </hudson.plugins.plot.Plot>
+      </plots>
+    </hudson.plugins.plot.PlotPublisher>
+  </publishers>
+  <buildWrappers/>
+</project>
