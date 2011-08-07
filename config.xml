@@ -64,7 +64,7 @@
               <fileType>properties</fileType>
             </hudson.plugins.plot.PropertiesSeries>
             <hudson.plugins.plot.PropertiesSeries>
-              <file>css21-validator_errors.properties</file>
+              <file>css21-validator_warnings.properties</file>
               <label>Warnings</label>
               <fileType>properties</fileType>
             </hudson.plugins.plot.PropertiesSeries>
