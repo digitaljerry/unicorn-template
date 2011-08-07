@@ -1,0 +1,7 @@
+2011-08-08  Jernej Zorec  <jernejz@gmail.com>
+
+	* Fixed typo: css warnings had the same number as errors. Thx to nikos <niko@nava.de> for reporting the issue.
+
+2011-02-13  Jernej Zorec  <jernejz@gmail.com>
+
+	* Initial release
